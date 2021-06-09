@@ -1,16 +1,16 @@
 openapi: 3.0.3
 info:
   version: 1.0.0
-  title: Example.com
-  termsOfService: 'https://example.com/terms/'
+  title: SFMS API Documentation
+  termsOfService: 'https://classtune.com/terms/'
   contact:
-    email: contact@example.com
-    url: 'http://example.com/contact'
+    email: info@classtune.com
+    url: 'http://classtune.com/contact'
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   x-logo:
-    url: 'https://redocly.github.io/openapi-template/logo.png'
+    url: 'https://github.com/Farah1994/sof-api/blob/main/openapi/School-of-Future-PPT-black.png'
   description:
     $ref: ./info-description.md
 externalDocs:
