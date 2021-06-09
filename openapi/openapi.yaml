@@ -10,7 +10,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   x-logo:
-    url: 'https://github.com/Farah1994/sof-api/blob/main/openapi/School-of-Future-PPT-black.png'
+    url: 'https://github.com/Farah1994/sof-api/blob/main/openapi/logo-panel.png'
   description:
     $ref: ./info-description.md
 externalDocs:
