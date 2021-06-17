@@ -1,21 +1,26 @@
 {
   "openapi" : "3.0.0",
-  "servers" : [ {
-    "description" : "SwaggerHub API Auto Mocking",
-    "url" : "https://virtserver.swaggerhub.com/Farah1994/API_Documentation/1.0.0"
-  } ],
   "info" : {
-    "description" : "This is a simple API",
+    "description" : "A simple API to illustrate OpenAPI concepts\n",
     "version" : "1.0.0",
     "title" : "SFMS API Documentation",
+    "termsOfService" : "http://swagger.io/terms/",
     "contact" : {
-      "email" : "info@classtune.com"
+      "email" : "hr@teamworkbd.com",
+      "url" : "https://classtune.com/contact"
     },
     "license" : {
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/Team-Creative/API_Documentation/1.0.0"
+  } ],
+  "security" : [ {
+    "api_key" : [ ]
+  } ],
   "tags" : [ {
     "name" : "Assignment-Teacher"
   }, {
@@ -325,6 +330,13 @@
     }
   },
   "components" : {
+    "securitySchemes" : {
+      "api_key" : {
+        "type" : "apiKey",
+        "in" : "header",
+        "name" : "api_key"
+      }
+    },
     "schemas" : {
       "create-assignment" : {
         "type" : "object",
