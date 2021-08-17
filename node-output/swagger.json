@@ -1,26 +1,21 @@
 {
   "openapi" : "3.0.0",
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/Farah1994/API_Documentation/1.0.0"
+  } ],
   "info" : {
-    "description" : "A simple API to illustrate OpenAPI concepts\n",
+    "description" : "This is a simple API",
     "version" : "1.0.0",
     "title" : "SFMS API Documentation",
-    "termsOfService" : "http://swagger.io/terms/",
     "contact" : {
-      "email" : "hr@teamworkbd.com",
-      "url" : "https://classtune.com/contact"
+      "email" : "info@classtune.com"
     },
     "license" : {
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "servers" : [ {
-    "description" : "SwaggerHub API Auto Mocking",
-    "url" : "https://virtserver.swaggerhub.com/Team-Creative/API_Documentation/1.0.0"
-  } ],
-  "security" : [ {
-    "api_key" : [ ]
-  } ],
   "tags" : [ {
     "name" : "Assignment-Teacher"
   }, {
@@ -32,29 +27,29 @@
   } ],
   "paths" : {
     "/assignment" : {
-      "parameters" : [ {
-        "name" : "cookieParam",
-        "in" : "cookie",
-        "required" : true,
-        "description" : "Some cookie",
-        "schema" : {
-          "type" : "integer",
-          "format" : "int64"
-        }
-      }, {
-        "name" : "Accept-Language",
-        "in" : "header",
-        "required" : false,
-        "description" : "List of acceptable human languages for response. Supported values are en-US, bn",
-        "schema" : {
-          "type" : "string",
-          "default" : "en-US"
-        }
-      } ],
       "post" : {
         "tags" : [ "Assignment-Teacher" ],
         "summary" : "Create a new assignment",
         "operationId" : "assignment",
+        "parameters" : [ {
+          "name" : "cookieParam",
+          "in" : "cookie",
+          "required" : true,
+          "description" : "Some cookie",
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }, {
+          "name" : "Accept-Language",
+          "in" : "header",
+          "required" : false,
+          "description" : "List of acceptable human languages for response. Supported values are en-US, bn",
+          "schema" : {
+            "type" : "string",
+            "default" : "en-US"
+          }
+        } ],
         "requestBody" : {
           "content" : {
             "application/json" : {
@@ -84,6 +79,47 @@
         "tags" : [ "Assignment-Teacher" ],
         "summary" : "List of assignment with summary",
         "operationId" : "getAssignments",
+        "parameters" : [ {
+          "in" : "header",
+          "name" : "start_date",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "in" : "header",
+          "name" : "end_date",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "in" : "header",
+          "name" : "student_id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }, {
+          "in" : "header",
+          "name" : "class_id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }, {
+          "in" : "header",
+          "name" : "section_id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "Successful operation."
@@ -330,13 +366,6 @@
     }
   },
   "components" : {
-    "securitySchemes" : {
-      "api_key" : {
-        "type" : "apiKey",
-        "in" : "header",
-        "name" : "api_key"
-      }
-    },
     "schemas" : {
       "create-assignment" : {
         "type" : "object",
